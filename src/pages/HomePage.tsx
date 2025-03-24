@@ -125,7 +125,11 @@ const HomePage = () => {
                 working.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="rounded-md font-medium">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-md font-medium bg-white text-gray-900 px-6 py-3 shadow-lg border border-gray-300 hover:bg-gray-300 transition-all"
+                >
                   <Link to="/portfolio">
                     View Our Work
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -135,7 +139,7 @@ const HomePage = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-md bg-white/10 text-white border-white/20 hover:bg-white/20 font-medium"
+                  className="rounded-md bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white font-medium"
                 >
                   <Link to="/contact">Contact Us</Link>
                 </Button>

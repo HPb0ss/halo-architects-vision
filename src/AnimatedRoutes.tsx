@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import PortfolioPage from "./pages/PortfolioPage";
 import TeamPage from "./pages/TeamPage";
@@ -15,6 +16,10 @@ const pageVariants = {
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="sync">
