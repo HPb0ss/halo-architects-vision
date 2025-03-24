@@ -14,7 +14,7 @@ const ProjectCard = ({ title, category, imageSrc, delay = 0 }: ProjectCardProps)
 
   return (
     <div 
-      className="project-card"
+      className="project-card group"
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
