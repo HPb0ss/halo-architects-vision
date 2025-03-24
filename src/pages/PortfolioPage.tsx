@@ -32,7 +32,7 @@ const PortfolioPage = () => {
       id: 2,
       title: "Meridian Tower",
       category: "commercial",
-      imageSrc: "/public/images/masrur-rahman-Q0oO-6KKEcY-unsplash.webp",
+      imageSrc: "/images/masrur-rahman-Q0oO-6KKEcY-unsplash.webp",
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const PortfolioPage = () => {
       id: 4,
       title: "Horizon Office",
       category: "commercial",
-      imageSrc: "/public/images/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.webp",
+      imageSrc: "/images/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.webp",
     },
     {
       id: 5,
