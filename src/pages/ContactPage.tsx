@@ -16,7 +16,6 @@ const pageVariants = {
 const ContactPage = () => {
   useEffect(() => {
     document.title = "Contact Us | HALO Architects";
-    window.scrollTo(0, 0);
   }, []);
 
   const contactDetails = [

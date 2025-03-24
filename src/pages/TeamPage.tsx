@@ -15,7 +15,6 @@ const pageVariants = {
 const TeamPage = () => {
   useEffect(() => {
     document.title = "Our Team | HALO Architects";
-    window.scrollTo(0, 0);
   }, []);
 
   // Sample team data

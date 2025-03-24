@@ -15,7 +15,6 @@ const pageVariants = {
 const PortfolioPage = () => {
   useEffect(() => {
     document.title = "Portfolio | HALO Architects";
-    window.scrollTo(0, 0);
   }, []);
 
   const [filter, setFilter] = useState("all");

@@ -20,7 +20,6 @@ const pageVariants = {
 const HomePage = () => {
   useEffect(() => {
     document.title = "HALO Architects | Sustainable Modern Architecture";
-    window.scrollTo(0, 0);
   }, []);
 
   // Sample project data
