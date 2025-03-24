@@ -4,6 +4,14 @@ import Footer from "@/components/Footer";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import ProjectCard from "@/components/ProjectCard";
 
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: { opacity: 0 }, // Start fully transparent
+  animate: { opacity: 1, transition: { duration: 0.3, ease: "easeOut" } }, // Fade in smoothly
+  exit: { opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } }, // Fade out before next page appears
+};
+
 const PortfolioPage = () => {
   useEffect(() => {
     document.title = "Portfolio | HALO Architects";
@@ -91,79 +99,87 @@ const PortfolioPage = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="min-h-screen"
+    >
+      <div className="min-h-screen">
+        <Navbar />
 
-      {/* Header */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
-              Our Portfolio
-            </h1>
-            <p className="text-foreground/70 text-lg md:text-xl max-w-2xl">
-              Explore our diverse collection of projects that showcase our
-              commitment to innovative, sustainable, and inspiring architectural
-              design.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="pb-8">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto pb-2 -mx-2 scrollbar-none">
-            <div className="flex px-2 space-x-2">
-              {filterOptions.map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => setFilter(option.value)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                    filter === option.value
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-foreground/70 hover:bg-secondary/80"
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <RevealOnScroll>
-        <section className="pb-24 md:pb-32">
+        {/* Header */}
+        <section className="pt-32 pb-20 md:pt-40 md:pb-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {filteredProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  category={
-                    project.category.charAt(0).toUpperCase() +
-                    project.category.slice(1)
-                  }
-                  imageSrc={project.imageSrc}
-                />
-              ))}
+            <div className="max-w-3xl">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
+                Our Portfolio
+              </h1>
+              <p className="text-foreground/70 text-lg md:text-xl max-w-2xl">
+                Explore our diverse collection of projects that showcase our
+                commitment to innovative, sustainable, and inspiring
+                architectural design.
+              </p>
             </div>
-
-            {filteredProjects.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-foreground/70">
-                  No projects found in this category.
-                </p>
-              </div>
-            )}
           </div>
         </section>
-      </RevealOnScroll>
 
-      <Footer />
-    </div>
+        {/* Filter Section */}
+        <section className="pb-8">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex overflow-x-auto pb-2 -mx-2 scrollbar-none">
+              <div className="flex px-2 space-x-2">
+                {filterOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => setFilter(option.value)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                      filter === option.value
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary text-foreground/70 hover:bg-secondary/80"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Grid */}
+        <RevealOnScroll>
+          <section className="pb-24 md:pb-32">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {filteredProjects.map((project) => (
+                  <ProjectCard
+                    key={project.id}
+                    title={project.title}
+                    category={
+                      project.category.charAt(0).toUpperCase() +
+                      project.category.slice(1)
+                    }
+                    imageSrc={project.imageSrc}
+                  />
+                ))}
+              </div>
+
+              {filteredProjects.length === 0 && (
+                <div className="text-center py-12">
+                  <p className="text-foreground/70">
+                    No projects found in this category.
+                  </p>
+                </div>
+              )}
+            </div>
+          </section>
+        </RevealOnScroll>
+
+        <Footer />
+      </div>
+    </motion.div>
   );
 };
 
