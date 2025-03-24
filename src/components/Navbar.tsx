@@ -26,6 +26,11 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+  
+  const scrollToTop = () => {
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const navLinks = [
     { title: "Home", path: "/" },
@@ -45,7 +50,7 @@ const Navbar = () => {
           <Link
             to="/"
             className="flex items-center space-x-2"
-            onClick={closeMenu}
+            onClick={scrollToTop}
           >
             <span className="font-display text-xl md:text-2xl font-semibold px-3 py-1.5 bg-white/70 backdrop-blur-sm rounded-md shadow-sm">
               HALO ARCHITECTS
