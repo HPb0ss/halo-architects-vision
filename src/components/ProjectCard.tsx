@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -9,11 +8,16 @@ interface ProjectCardProps {
   delay?: number;
 }
 
-const ProjectCard = ({ title, category, imageSrc, delay = 0 }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  category,
+  imageSrc,
+  delay = 0,
+}: ProjectCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <div 
+    <div
       className="project-card group"
       style={{ animationDelay: `${delay}ms` }}
     >
@@ -38,7 +42,7 @@ const ProjectCard = ({ title, category, imageSrc, delay = 0 }: ProjectCardProps)
           {title}
         </h3>
         <div className="mt-4 flex items-center text-white/90 text-sm font-medium">
-          <span>View Project</span>
+          <a href="#">View Project</a>
           <ArrowRight className="h-4 w-4 ml-1" />
         </div>
       </div>
