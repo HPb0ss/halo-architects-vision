@@ -28,7 +28,7 @@ const HomePage = () => {
       id: 2,
       title: "Meridian Tower",
       category: "Commercial",
-      imageSrc: "/public/images/masrur-rahman-Q0oO-6KKEcY-unsplash.jpg",
+      imageSrc: "/public/images/masrur-rahman-Q0oO-6KKEcY-unsplash.webp",
     },
     {
       id: 3,
