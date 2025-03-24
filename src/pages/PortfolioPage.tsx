@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,6 +7,7 @@ import ProjectCard from "@/components/ProjectCard";
 const PortfolioPage = () => {
   useEffect(() => {
     document.title = "Portfolio | HALO Architects";
+    window.scrollTo(0, 0);
   }, []);
 
   const [filter, setFilter] = useState("all");
@@ -18,68 +18,76 @@ const PortfolioPage = () => {
       id: 1,
       title: "Azure Pavilion",
       category: "residential",
-      imageSrc: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 2,
       title: "Meridian Tower",
       category: "commercial",
-      imageSrc: "https://images.unsplash.com/photo-1600607687644-c7f34e00520d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc: "/public/images/masrur-rahman-Q0oO-6KKEcY-unsplash.jpg",
     },
     {
       id: 3,
       title: "Solstice Villa",
       category: "residential",
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 4,
       title: "Horizon Office",
       category: "commercial",
-      imageSrc: "https://images.unsplash.com/photo-1545043059-951e55bf093a?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc: "/public/images/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.jpg",
     },
     {
       id: 5,
       title: "Cascade Apartments",
       category: "residential",
-      imageSrc: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 6,
       title: "Prisma Hotel",
       category: "hospitality",
-      imageSrc: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 7,
       title: "Echo Museum",
       category: "cultural",
-      imageSrc: "https://images.unsplash.com/photo-1529336953128-a85760f58cb5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1529336953128-a85760f58cb5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 8,
       title: "Oasis Retreat",
       category: "hospitality",
-      imageSrc: "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 9,
       title: "Pulse Commercial Center",
       category: "commercial",
-      imageSrc: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
-    }
+      imageSrc:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
+    },
   ];
 
-  const filteredProjects = filter === "all" 
-    ? projects 
-    : projects.filter(project => project.category === filter);
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   const filterOptions = [
     { value: "all", label: "All Projects" },
     { value: "residential", label: "Residential" },
     { value: "commercial", label: "Commercial" },
     { value: "hospitality", label: "Hospitality" },
-    { value: "cultural", label: "Cultural" }
+    { value: "cultural", label: "Cultural" },
   ];
 
   return (
@@ -94,8 +102,9 @@ const PortfolioPage = () => {
               Our Portfolio
             </h1>
             <p className="text-foreground/70 text-lg md:text-xl max-w-2xl">
-              Explore our diverse collection of projects that showcase our commitment 
-              to innovative, sustainable, and inspiring architectural design.
+              Explore our diverse collection of projects that showcase our
+              commitment to innovative, sustainable, and inspiring architectural
+              design.
             </p>
           </div>
         </div>
@@ -133,15 +142,20 @@ const PortfolioPage = () => {
                 <ProjectCard
                   key={project.id}
                   title={project.title}
-                  category={project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+                  category={
+                    project.category.charAt(0).toUpperCase() +
+                    project.category.slice(1)
+                  }
                   imageSrc={project.imageSrc}
                 />
               ))}
             </div>
-            
+
             {filteredProjects.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-foreground/70">No projects found in this category.</p>
+                <p className="text-foreground/70">
+                  No projects found in this category.
+                </p>
               </div>
             )}
           </div>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -26,10 +25,10 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-  
+
   const scrollToTop = () => {
     closeMenu();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const navLinks = [
@@ -58,7 +57,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex space-x-1">
+          <nav className="hidden md:flex space-x-1 px-3 py-1.5 bg-white/70 backdrop-blur-sm rounded-md shadow-sm">
             {navLinks.map((link) => (
               <Link
                 key={link.path}

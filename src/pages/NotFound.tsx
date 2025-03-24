@@ -1,4 +1,3 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -16,15 +15,18 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <div className="flex-grow flex items-center justify-center py-20">
         <div className="text-center px-4">
-          <h1 className="font-display text-7xl md:text-9xl font-medium mb-6">404</h1>
+          <h1 className="font-display text-7xl md:text-9xl font-medium mb-6">
+            404
+          </h1>
           <p className="text-xl md:text-2xl text-foreground/70 mb-8">
             Oops! The page you're looking for doesn't exist.
           </p>
@@ -36,7 +38,7 @@ const NotFound = () => {
           </Button>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

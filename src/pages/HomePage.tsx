@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Building, Users, Palette, Lightbulb } from "lucide-react";
@@ -13,6 +12,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 const HomePage = () => {
   useEffect(() => {
     document.title = "HALO Architects | Sustainable Modern Architecture";
+    window.scrollTo(0, 0);
   }, []);
 
   // Sample project data
@@ -21,57 +21,65 @@ const HomePage = () => {
       id: 1,
       title: "Azure Pavilion",
       category: "Residential",
-      imageSrc: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
     },
     {
       id: 2,
       title: "Meridian Tower",
       category: "Commercial",
-      imageSrc: "https://images.unsplash.com/photo-1600607687644-c7f34e00520d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+      imageSrc: "/public/images/masrur-rahman-Q0oO-6KKEcY-unsplash.jpg",
     },
     {
       id: 3,
       title: "Solstice Villa",
       category: "Residential",
-      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
-    }
+      imageSrc:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
+    },
   ];
 
   const services = [
     {
       title: "Residential Design",
-      description: "Creating beautiful, sustainable living spaces tailored to your lifestyle and needs.",
-      icon: Building
+      description:
+        "Creating beautiful, sustainable living spaces tailored to your lifestyle and needs.",
+      icon: Building,
     },
     {
       title: "Commercial Architecture",
-      description: "Innovative commercial spaces that balance functionality, aesthetics, and sustainability.",
-      icon: Lightbulb
+      description:
+        "Innovative commercial spaces that balance functionality, aesthetics, and sustainability.",
+      icon: Lightbulb,
     },
     {
       title: "Interior Design",
-      description: "Thoughtful interior spaces that complement the architecture and enhance the user experience.",
-      icon: Palette
+      description:
+        "Thoughtful interior spaces that complement the architecture and enhance the user experience.",
+      icon: Palette,
     },
     {
       title: "Team Collaboration",
-      description: "Working closely with clients, engineers, and contractors to realize your vision.",
-      icon: Users
-    }
+      description:
+        "Working closely with clients, engineers, and contractors to realize your vision.",
+      icon: Users,
+    },
   ];
 
   const testimonials = [
     {
-      quote: "HALO Architects transformed our concept into a breathtaking home that exceeds all our expectations. Their attention to detail and commitment to sustainability was impressive.",
+      quote:
+        "HALO Architects transformed our concept into a breathtaking home that exceeds all our expectations. Their attention to detail and commitment to sustainability was impressive.",
       author: "Sarah Johnson",
       role: "Homeowner",
     },
     {
-      quote: "Working with HALO on our office redesign was a seamless experience. They understood our brand and created a space that inspires creativity and collaboration.",
+      quote:
+        "Working with HALO on our office redesign was a seamless experience. They understood our brand and created a space that inspires creativity and collaboration.",
       author: "Michael Chen",
       role: "CEO",
-      company: "Innovative Solutions"
-    }
+      company: "Innovative Solutions",
+    },
   ];
 
   return (
@@ -98,8 +106,8 @@ const HomePage = () => {
               Designing spaces that inspire and endure
             </h1>
             <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl">
-              HALO Architects combines innovation, sustainability, and timeless design 
-              to create extraordinary spaces for living and working.
+              HALO Architects combines innovation, sustainability, and timeless
+              design to create extraordinary spaces for living and working.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="rounded-md font-medium">
@@ -108,7 +116,12 @@ const HomePage = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-md bg-white/10 text-white border-white/20 hover:bg-white/20 font-medium">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-md bg-white/10 text-white border-white/20 hover:bg-white/20 font-medium"
+              >
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -129,14 +142,16 @@ const HomePage = () => {
                   Designing with purpose and precision
                 </h2>
                 <p className="text-foreground/70 mb-6">
-                  At HALO Architects, we believe that great architecture goes beyond aesthetics. 
-                  It's about creating spaces that resonate with people, respect the environment, 
-                  and stand the test of time.
+                  At HALO Architects, we believe that great architecture goes
+                  beyond aesthetics. It's about creating spaces that resonate
+                  with people, respect the environment, and stand the test of
+                  time.
                 </p>
                 <p className="text-foreground/70 mb-8">
-                  Our collaborative approach involves understanding your vision, 
-                  analyzing the site and context, and delivering innovative solutions 
-                  that exceed expectations while adhering to sustainability principles.
+                  Our collaborative approach involves understanding your vision,
+                  analyzing the site and context, and delivering innovative
+                  solutions that exceed expectations while adhering to
+                  sustainability principles.
                 </p>
                 <Button asChild className="rounded-md font-medium">
                   <Link to="/team">
@@ -147,16 +162,16 @@ const HomePage = () => {
               </div>
               <div className="relative">
                 <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" 
-                    alt="Architects working" 
+                  <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200"
+                    alt="Architects working"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-48 h-48 rounded-lg overflow-hidden border-4 border-background shadow-xl hidden md:block">
-                  <img 
-                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=400" 
-                    alt="Blueprint details" 
+                  <img
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=400"
+                    alt="Blueprint details"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -178,8 +193,9 @@ const HomePage = () => {
                 Featured Projects
               </h2>
               <p className="text-foreground/70">
-                Explore our diverse portfolio of residential and commercial projects, 
-                each reflecting our commitment to innovative design and sustainability.
+                Explore our diverse portfolio of residential and commercial
+                projects, each reflecting our commitment to innovative design
+                and sustainability.
               </p>
             </div>
 
@@ -196,7 +212,11 @@ const HomePage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button asChild variant="outline" className="rounded-md font-medium">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-md font-medium"
+              >
                 <Link to="/portfolio">
                   View All Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -219,8 +239,8 @@ const HomePage = () => {
                 How We Can Help You
               </h2>
               <p className="text-foreground/70">
-                We offer a comprehensive range of architectural services to bring your vision to life, 
-                from concept to completion.
+                We offer a comprehensive range of architectural services to
+                bring your vision to life, from concept to completion.
               </p>
             </div>
 
@@ -250,8 +270,8 @@ const HomePage = () => {
                 What Our Clients Say
               </h2>
               <p className="text-foreground/70">
-                Don't just take our word for it. Here's what our clients have to say about 
-                their experience working with HALO Architects.
+                Don't just take our word for it. Here's what our clients have to
+                say about their experience working with HALO Architects.
               </p>
             </div>
 
@@ -279,8 +299,9 @@ const HomePage = () => {
                 Ready to bring your vision to life?
               </h2>
               <p className="text-foreground/70 text-lg mb-8 max-w-2xl mx-auto">
-                Let's create something extraordinary together. Contact us to discuss your 
-                project and discover how HALO Architects can help you realize your dreams.
+                Let's create something extraordinary together. Contact us to
+                discuss your project and discover how HALO Architects can help
+                you realize your dreams.
               </p>
               <Button asChild size="lg" className="rounded-md font-medium">
                 <Link to="/contact">
