@@ -47,7 +47,7 @@ const Navbar = () => {
             className="flex items-center space-x-2"
             onClick={closeMenu}
           >
-            <span className="font-display text-xl md:text-2xl font-semibold">
+            <span className="font-display text-xl md:text-2xl font-semibold px-3 py-1.5 bg-white/70 backdrop-blur-sm rounded-md shadow-sm">
               HALO ARCHITECTS
             </span>
           </Link>
